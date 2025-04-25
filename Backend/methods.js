@@ -1,24 +1,15 @@
-const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
 const fs = require("fs");
 const path = require("path");
 
 //  Function to hash a password
 function hashPassword(password, algorithm = "sha256") {
-  if (algorithm === "bcrypt") {
-    return bcrypt.hashSync(password, 10); // Use bcrypt for secure hashing
-  } else {
-    return crypto.createHash(algorithm).update(password).digest("hex"); // Use crypto for other algorithms
-  }
+  return crypto.createHash(algorithm).update(password).digest("hex"); // Use crypto for other algorithms
 }
 
 //  Function to compare a password with a hash
 function compareHash(password, hashedPassword, algorithm = "sha256") {
-  if (algorithm === "bcrypt") {
-    return bcrypt.compareSync(password, hashedPassword); // Use bcrypt for comparison
-  } else {
-    return hashPassword(password, algorithm) === hashedPassword; // Compare hashes directly
-  }
+  return hashPassword(password, algorithm) === hashedPassword; // Compare hashes directly
 }
 
 //  Brute-force attack (Checks short passwords)
