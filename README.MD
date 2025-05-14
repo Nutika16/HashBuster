@@ -1,1 +1,1 @@
-# HashBuster Cyber Project
+# HashBuster - Password Cracking tool
