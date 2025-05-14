@@ -20,15 +20,9 @@
    git clone https://github.com/Nutika0975/HashBuster_Password_Cracking_tool.git
    cd HashBuster_Password_Cracking_tool
 2. Install Dependencies
-bash
-Copy
-Edit
 npm install
 
 3. Start the Application
-bash
-Copy
-Edit
 npm run dev
 
 4. Access the Tool
